@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h1>Stupid Coaching</h1>
+  <%
+    if params[:question] == "I'm going to work."
+      answer = "Great!"
+    elsif params[:question].include?("?")
+      answer = "Silly question, get dressed and go to work!"
+    else
+      answer = "I don't care, get dressed and go to work!"
+    end
+  %>
+
+  <div class="question d-flex-column">
+    <p><%=params[:question]%></p>
+    <p>-You</p>
+  </div>
+
+  <div class="answer d-flex-column align-items-center">
+    <p><%= answer %></p>
+    <p>-Your coach</p>
+  </div>
+
+  <%= link_to "Ask a new question", ask_path, class: "btn btn-primary mt-4"  %>
+</div>
